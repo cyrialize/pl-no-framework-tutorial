@@ -7,3 +7,4 @@ This code is a result of me working through [Patrick Louys No Framework Tutorial
 There are some changes I've made from what is lined out within the tutorial, they are:
 
 - Using [Symfony's HTTPFoundation Component](https://github.com/symfony/http-foundation) instead of [Patrick Louys' HTTP Component](https://github.com/PatrickLouys/http)
+  - Including an HTTP component occurs in [step 4](https://github.com/PatrickLouys/no-framework-tutorial/blob/master/04-http.md) of the tutorial
