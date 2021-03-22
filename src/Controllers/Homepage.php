@@ -13,13 +13,13 @@ class Homepage
     public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
-        $this->response = $response;   
+        $this->response = $response;
     }
 
     public function show()
     {
         $content = "<h1> Hello, World! </h1>";
-        $content .= "Hello " . $this->request->query->get('name', 'stranger');
+        $content .= "Hello " . $this->request->query->get('name', '');
         $this->response->setContent($content);
     }
 

@@ -23,8 +23,8 @@ if ($environment !== 'production') {
 $whoops->register();
 
 $injector = include('Dependencies.php');
-$request = $injector->make('HttpFoundation\Request');
-$response = $injector->make('HttpFoundation\Response');
+$request = $injector->make('Symfony\Component\HttpFoundation\Request');
+$response = $injector->make('Symfony\Component\HttpFoundation\Response');
 
 $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
     $routes = include('Routes.php');
