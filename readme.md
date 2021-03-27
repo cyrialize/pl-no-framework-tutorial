@@ -11,3 +11,6 @@ There are some changes I've made from what is lined out within the tutorial, the
 
 # Tips
 - Run `php -S localhost:8000` in the `public/` directory - not the root directory of the entire project, this is small mistake I made often while going through the tutorial
+
+# TODOs
+- [ ] Add doc blocks
