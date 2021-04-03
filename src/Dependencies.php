@@ -16,12 +16,13 @@ $injector->define('Symfony\Component\HttpFoundation\Request', [
 $injector->alias('Symfony\Component\HttpFoundation\Response', 'Symfony\Component\HttpFoundation\Response');
 $injector->share('Symfony\Component\HttpFoundation\Response');
 
-// $injector->alias('Example\Template\Renderer', 'Example\Template\TwigRenderer');
-// $injector->delegate('Twig_Environment', function () use($injector) {
-//     $loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates');
-//     $twig = new Twig_Environment($loader);
-//     return $twig;
-// });
+$injector->define('Mustache_Engine', [
+    ':options' => [
+        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates', [
+            'extension' => '.html',
+        ]),
+    ],
+]);
 
 $injector->alias('Example\Template\Renderer', 'Example\Template\TwigRenderer');
 $injector->delegate('Twig\Environment', function() use ($injector) {
@@ -29,11 +30,5 @@ $injector->delegate('Twig\Environment', function() use ($injector) {
     $twig = new Twig\Environment($loader);
     return $twig;
 });
-
-
-// $env = new \Twig\Environment(new \Twig\Loader\FilesystemLoader(__DIR__ . '/../templates'));
-// $injector->define('Example\Template\Renderer', [
-//     $env
-// ]);
 
 return $injector;

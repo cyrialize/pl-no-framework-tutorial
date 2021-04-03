@@ -24,7 +24,7 @@ class Homepage
         $data = [
             'name' => $this->request->query->get('name', 'stranger')
         ];
-        $html = $this->renderer->render('hello', $data);
+        $html = $this->renderer->render('Homepage', $data);
         $this->response->setContent($html);
     }
 
