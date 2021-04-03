@@ -31,4 +31,10 @@ $injector->delegate('Twig\Environment', function() use ($injector) {
     return $twig;
 });
 
+$injector->define('Example\Page\FilePageReader', [
+    ':pageFolder' => __DIR__ . '/../pages'
+]);
+$injector->alias('Example\Page\PageReader', 'Example\Page\FilePageReader');
+$injector->share('Example\Page\FilePageReader');
+
 return $injector;
