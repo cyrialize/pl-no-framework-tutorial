@@ -6,15 +6,15 @@ use Twig\Environment;
 
 class TwigRenderer implements Renderer
 {
-    private $engine;
+    private $renderer;
 
-    public function __construct(Environment $engine)
+    public function __construct(Environment $renderer)
     {
-        $this->engine = $engine;
+        $this->renderer = $renderer;
     }
 
     public function render($template, $data = []) : string 
     {
-        return $this->engine->render("$template.html", $data);
+        return $this->renderer->render("$template.html", $data);
     }
 }
